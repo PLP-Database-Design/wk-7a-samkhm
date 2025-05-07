@@ -1,7 +1,7 @@
 -- 1.
 
 -- Table for orders and customers
-CREATE TABLE productDetails (
+CREATE TABLE customerDetails (
     orderID INT PRIMARY KEY,
     customerName VARCHAR(50) NOT NULL
 );
@@ -11,7 +11,7 @@ CREATE TABLE productTable (
     productID INT PRIMARY KEY,
     orderID INT,
     productName VARCHAR(50) NOT NULL,
-    FOREIGN KEY (orderID) REFERENCES productDetails(orderID)
+    FOREIGN KEY (orderID) REFERENCES customerDetails(orderID)
 );
 
 -- 2.
