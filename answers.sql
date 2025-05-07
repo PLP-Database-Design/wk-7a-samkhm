@@ -15,22 +15,15 @@ FOREIGN KEY (orderID) REFERENCES customerDetails(orderID)
 );
 
 -- 2. Question 2NF
-CREATE TABLE CustomerDetails(
-customerId INT PRIMARY KEY,
+CREATE TABLE orders(
+orderId INT PRIMARY KEY,
 customerName VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE Product(
+CREATE TABLE products(
 productId INT PRIMARY KEY,
-productName VARCHAR(50) NOT NULL
-);
-
-
-CREATE TABLE orderDetails(
-orderId INT PRIMARY KEY,
-productId INT,
+productName VARCHAR(50) NOT NULL,
 Quantity INT NOT NULL,
-customerId INT,
-FOREIGN KEY (customerId) REFERENCES CustomerDetails(customerId),
-FOREIGN KEY (productId) REFERENCES Product(productId)
+orderId INT,
+FOREIGN KEY (orderId) REFERENCES orders(orderId)
 );
